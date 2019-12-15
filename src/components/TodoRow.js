@@ -1,16 +1,21 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { motion } from 'framer-motion'
+import { ReactComponent as Checked } from '../media/checked.svg'
 
 //x//////////////////////////////////////////////////
 // TodoRow
 //x//////////////////////////////////////////////////
 
-export const TodoRow = ({ children, name, ...props }) => (
-  <SRow initial={{ x: 20 }} animate={{ x: 0 }} exit={{ opacity: 0 }} {...props}>
-    <span> 📝 {name}</span>
+export const TodoRow = ({ children, todo, ...props }) => (
+  <SRow
+    positionTransition
+    initial={{ x: 20 }}
+    animate={{ x: 0 }}
+    exit={{ opacity: 0 }}
+    {...props}>
+    <SChecked completed={todo.completed ? 'true' : 'false'} />
+    {todo.name}
     <ButtonGrid>{children}</ButtonGrid>
   </SRow>
 )
@@ -25,9 +30,9 @@ const SRow = styled(motion.li)(
     display: grid;
     align-items: center;
     gap: 0.5rem;
-    grid-template-columns: 1fr auto;
-    border-bottom: 1px solid #e1e1e1;
-    &:last-child {
+    grid-template-columns: 20px 1fr auto;
+    border-top: 1px solid #e1e1e1;
+    &:first-child {
       border: none;
     }
   `
@@ -38,5 +43,12 @@ const ButtonGrid = styled.div(
     display: grid;
     grid-template-columns: auto auto;
     gap: 0.5rem;
+  `
+)
+
+const SChecked = styled(Checked)(
+  ({ completed, theme }) => css`
+    fill: ${theme.colors.tertiary};
+    fill: ${completed === 'true' && '#ccc'};
   `
 )

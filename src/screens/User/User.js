@@ -44,6 +44,8 @@ export const User = () => {
       <ResponsiveGrid min='300px'>
         <Image
           alt='Photo'
+          width={800}
+          height={400}
           src={`https://picsum.photos/id/${user.photoId}/800/400`}
         />
         <UserRoutes todos={todos} setTodos={setTodos} />

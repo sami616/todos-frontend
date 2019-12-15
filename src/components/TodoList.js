@@ -15,7 +15,7 @@ export const TodoList = ({ todos, setTodos, row }) => (
         )}
       </AnimatePresence>
     </SList>
-    {!todos.length && <p>No todos</p>}
+    {/* {!todos.length && <p>No todos</p>} */}
   </>
 )
 
@@ -24,11 +24,9 @@ export const TodoList = ({ todos, setTodos, row }) => (
 //x//////////////////////////////////////////////////
 
 const SList = styled.ul(
-  ({ theme }) => css`
+  () => css`
     margin: 0;
     padding: 0;
     list-style: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: ${theme.radius.medium};
   `
 )

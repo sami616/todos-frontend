@@ -13,13 +13,15 @@ export const Home = () => (
         <h4>USES:</h4>
         <ol>
           <li>Hooks</li>
-          <li>Suspense (Code splitting)</li>
+          <li>Code splitting (Suspense)</li>
           <li>Routing (React Router)</li>
           <li>CSSinJS (Styled Components)</li>
           <li>Themes (Styled Components)</li>
           <li>Formatting (Prettier)</li>
           <li>REST (JSON Server)</li>
+          <li>SVG Icons</li>
           <li>Fragments</li>
+          <li>PWA Support</li>
           <li>Build (Create React App)</li>
           <li>Notifications (React Toastify)</li>
           <li>Environment variables</li>

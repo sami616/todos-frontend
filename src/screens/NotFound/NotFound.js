@@ -1,9 +1,8 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-
 import React from 'react'
 import { Heading, Transform } from '../../components'
 import styled, { css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { ReactComponent as Search } from '../../media/search.svg'
 
 //x//////////////////////////////////////////////////
 // NotFound
@@ -11,8 +10,9 @@ import { NavLink } from 'react-router-dom'
 
 export const NotFound = () => (
   <STranform axis='y'>
+    <SSearch />
     <Heading margin='0' type='h1'>
-      🙈 Not found (404)
+      Not found (404)
     </Heading>
     <NavLink to='/'>Go home</NavLink>
   </STranform>
@@ -34,5 +34,13 @@ const STranform = styled(Transform)(
     background: #fff;
     place-items: center;
     place-content: center;
+    padding: 20px;
+    text-align: center;
+  `
+)
+
+const SSearch = styled(Search)(
+  () => css`
+    max-width: 160px;
   `
 )

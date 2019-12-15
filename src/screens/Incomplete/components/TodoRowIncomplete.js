@@ -8,7 +8,7 @@ import { TodoEditModal } from './'
 //x//////////////////////////////////////////////////
 
 export const TodoRowIncomplete = ({ todo, setTodos }) => (
-  <TodoRow name={todo.name}>
+  <TodoRow todo={todo}>
     <TodoMoveButton setTodos={setTodos} todo={todo} />
     <ToggleButton secondary small label='Edit'>
       {({ isOn, setOff }) => (

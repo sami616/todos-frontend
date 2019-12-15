@@ -8,6 +8,7 @@ import styled, { css } from 'styled-components'
 
 export const UserNav = ({ completeCount, incompleteCount }) => {
   const match = useRouteMatch()
+
   return (
     <SNav>
       <SNavLink to={`${match.url}/incomplete`}>

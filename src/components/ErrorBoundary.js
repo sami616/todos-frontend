@@ -1,8 +1,7 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-
 import React from 'react'
 import { Heading, Transform } from './'
 import styled, { css } from 'styled-components'
+import { ReactComponent as Skull } from '../media/skull.svg'
 
 //x//////////////////////////////////////////////////
 // ErrorBoundary
@@ -19,8 +18,9 @@ export class ErrorBoundary extends React.Component {
     if (this.state.error) {
       return (
         <STranform axis='y'>
+          <SSkull />
           <Heading margin='0' type='h1'>
-            💀 {this.props.fallback || 'Something went wrong'}
+            {this.props.fallback || 'Something went wrong'}
           </Heading>
         </STranform>
       )
@@ -41,8 +41,17 @@ const STranform = styled(Transform)(
     top: 0;
     left: 0;
     display: grid;
+    gap: 1rem;
     background: #fff;
     place-items: center;
     place-content: center;
+    padding: 20px;
+    text-align: center;
+  `
+)
+
+const SSkull = styled(Skull)(
+  () => css`
+    max-width: 160px;
   `
 )

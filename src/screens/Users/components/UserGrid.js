@@ -9,6 +9,12 @@ import { AnimatePresence } from 'framer-motion'
 
 export const UserGrid = ({ users, setUsers }) => (
   <>
+    <ToggleButton margin='0 0 1rem 0' label='Add user'>
+      {({ isOn, setOff }) => (
+        <UserAddModal setUsers={setUsers} isOpen={isOn} setClose={setOff} />
+      )}
+    </ToggleButton>
+
     <ResponsiveGrid type='auto-fill'>
       <AnimatePresence initial={false}>
         {users.map(user => (
@@ -16,13 +22,5 @@ export const UserGrid = ({ users, setUsers }) => (
         ))}
       </AnimatePresence>
     </ResponsiveGrid>
-
-    {!users.length && <p>No users</p>}
-
-    <ToggleButton margin='1rem 0 0 0' label='Add user'>
-      {({ isOn, setOff }) => (
-        <UserAddModal setUsers={setUsers} isOpen={isOn} setClose={setOff} />
-      )}
-    </ToggleButton>
   </>
 )

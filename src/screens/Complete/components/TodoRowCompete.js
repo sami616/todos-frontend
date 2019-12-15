@@ -6,7 +6,7 @@ import { TodoMoveButton, RowDeleteButton, TodoRow } from '../../../components'
 //x//////////////////////////////////////////////////
 
 export const TodoRowComplete = ({ todo, setTodos }) => (
-  <TodoRow name={todo.name}>
+  <TodoRow todo={todo}>
     <TodoMoveButton setTodos={setTodos} todo={todo} />
     <RowDeleteButton
       secondary

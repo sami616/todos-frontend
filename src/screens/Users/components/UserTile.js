@@ -10,14 +10,20 @@ import { motion } from 'framer-motion'
 //x//////////////////////////////////////////////////
 
 export const UserTile = ({ user, setUsers }) => (
-  <STile initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ opacity: 0 }}>
+  <STile
+    positionTransition
+    initial={{ scale: 0.9 }}
+    animate={{ scale: 1 }}
+    exit={{ opacity: 0 }}>
     <SPhotoLink to={`/users/${user.id}`}>
       {user.photoId && (
         <SImage
           cover
+          width={800}
+          height={800}
           loading='lazy'
           alt='Profile'
-          src={`https://picsum.photos/id/${user.photoId}/800/400`}
+          src={`https://picsum.photos/id/${user.photoId}/800/800`}
         />
       )}
       <SName>

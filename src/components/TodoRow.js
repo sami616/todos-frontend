@@ -48,6 +48,8 @@ const ButtonGrid = styled.div(
 
 const SChecked = styled(Checked)(
   ({ completed, theme }) => css`
+    width: 100%;
+    height: auto;
     fill: ${theme.colors.tertiary};
     fill: ${completed === 'true' && '#ccc'};
   `

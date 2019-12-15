@@ -42,5 +42,7 @@ const STranform = styled(Transform)(
 const SSearch = styled(Search)(
   () => css`
     max-width: 160px;
+    width: 100%;
+    height: auto;
   `
 )

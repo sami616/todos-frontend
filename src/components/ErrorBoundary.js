@@ -53,5 +53,7 @@ const STranform = styled(Transform)(
 const SSkull = styled(Skull)(
   () => css`
     max-width: 160px;
+    width: 1000%;
+    height: auto;
   `
 )

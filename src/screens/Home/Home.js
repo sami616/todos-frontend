@@ -20,7 +20,9 @@ export const Home = () => (
           <li>Formatting (Prettier)</li>
           <li>REST (JSON Server)</li>
           <li>SVG Icons</li>
+          <li>Render props</li>
           <li>Fragments</li>
+          <li>Portals</li>
           <li>PWA Support</li>
           <li>Build (Create React App)</li>
           <li>Notifications (React Toastify)</li>
@@ -34,7 +36,6 @@ export const Home = () => (
       <div>
         <h4>DOESNT USE:</h4>
         <ol>
-          <li>Portals</li>
           <li>Context</li>
           <li>Reducers</li>
           <li>Auth</li>

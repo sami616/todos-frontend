@@ -1,5 +1,6 @@
 export { GlobalStyle } from './GlobalStyle'
 export { Theme } from './Theme'
+export { Portal } from './Portal'
 export { Transform } from './Transform'
 export { RootRoutes } from './RootRoutes'
 export { Heading } from './Heading'

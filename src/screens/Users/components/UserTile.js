@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { UserEditModal } from '.'
 import { ToggleButton, RowDeleteButton, Image } from '../../../components'
+import { UserDeleteModal } from './'
 import styled, { css } from 'styled-components'
 import { motion } from 'framer-motion'
 
@@ -43,13 +44,16 @@ export const UserTile = ({ user, setUsers }) => (
         )}
       </ToggleButton>
 
-      <RowDeleteButton
-        row={user}
-        secondary
-        baseUrl='/users'
-        error='Couldnt delete user'
-        setData={setUsers}
-      />
+      <ToggleButton secondary label='Delete'>
+        {({ isOn, setOff }) => (
+          <UserDeleteModal
+            user={user}
+            setUsers={setUsers}
+            isOpen={isOn}
+            setClose={setOff}
+          />
+        )}
+      </ToggleButton>
     </SButtonGrid>
   </STile>
 )

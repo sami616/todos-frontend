@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Transform } from './'
+import { Heading, Transform, Button } from './'
 import styled, { css } from 'styled-components'
 import { ReactComponent as Skull } from '../media/skull.svg'
 
@@ -22,6 +22,7 @@ export class ErrorBoundary extends React.Component {
           <Heading margin='0' type='h1'>
             {this.props.fallback || 'Something went wrong'}
           </Heading>
+          <Button onClick={() => window.location.reload()}>Reload</Button>
         </STranform>
       )
     }

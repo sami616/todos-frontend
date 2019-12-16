@@ -66,6 +66,8 @@ const Item = styled.li(
     display: grid;
     grid-template-columns: 20px 1fr;
     gap: 0.5rem;
-    margin: 0 0 0.5rem 0;
+    margin: 0;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 1rem 1rem 1rem 0;
   `
 )

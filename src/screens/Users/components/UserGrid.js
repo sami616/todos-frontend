@@ -1,5 +1,5 @@
 import React from 'react'
-import { UserAddModal, UserTile } from '.'
+import { UserAddModal, UserCard } from './'
 import { ResponsiveGrid, ToggleButton } from '../../../components'
 import { AnimatePresence } from 'framer-motion'
 
@@ -18,7 +18,7 @@ export const UserGrid = ({ users, setUsers }) => (
     <ResponsiveGrid type='auto-fill'>
       <AnimatePresence initial={false}>
         {users.map(user => (
-          <UserTile key={user.id} user={user} setUsers={setUsers} />
+          <UserCard key={user.id} user={user} setUsers={setUsers} />
         ))}
       </AnimatePresence>
     </ResponsiveGrid>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { UserEditModal } from '.'
-import { ToggleButton, RowDeleteButton, Image } from '../../../components'
+import { ToggleButton, Image } from '../../../components'
 import { UserDeleteModal } from './'
 import styled, { css } from 'styled-components'
 import { motion } from 'framer-motion'
@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 // UserTile
 //x//////////////////////////////////////////////////
 
-export const UserTile = ({ user, setUsers }) => (
+export const UserCard = ({ user, setUsers }) => (
   <STile
     positionTransition
     initial={{ scale: 0.9 }}

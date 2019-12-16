@@ -1,7 +1,6 @@
 import React from 'react'
 import { Heading, Transform } from '../../components'
 import { ReactComponent as Checked } from '../../media/checked.svg'
-import { ReactComponent as Cross } from '../../media/cross.svg'
 import styled, { css } from 'styled-components'
 
 //x//////////////////////////////////////////////////
@@ -58,6 +57,8 @@ const List = styled.ul(
 const SChecked = styled(Checked)(
   ({ theme }) => css`
     fill: ${theme.colors.secondary};
+    width: 100%;
+    height: auto;
   `
 )
 

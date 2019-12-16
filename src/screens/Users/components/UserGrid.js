@@ -1,7 +1,7 @@
 import React from 'react'
 import { UserAddModal, UserCard } from './'
 import { ResponsiveGrid, ToggleButton } from '../../../components'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 //x//////////////////////////////////////////////////
 // UserGrid
@@ -14,6 +14,12 @@ export const UserGrid = ({ users, setUsers }) => (
         <UserAddModal setUsers={setUsers} isOpen={isOn} setClose={setOff} />
       )}
     </ToggleButton>
+
+    {!users.length && (
+      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        No users
+      </motion.p>
+    )}
 
     <ResponsiveGrid type='auto-fill'>
       <AnimatePresence initial={false}>

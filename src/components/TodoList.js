@@ -1,19 +1,26 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 //x//////////////////////////////////////////////////
 // TodoList
 //x//////////////////////////////////////////////////
 
 export const TodoList = ({ todos, setTodos, row }) => (
-  <SList>
-    <AnimatePresence initial={false}>
-      {todos.map(todo =>
-        React.cloneElement(row, { setTodos, todo, key: todo.id })
-      )}
-    </AnimatePresence>
-  </SList>
+  <>
+    {!todos.length && (
+      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        No todos
+      </motion.p>
+    )}
+    <SList>
+      <AnimatePresence initial={false}>
+        {todos.map(todo =>
+          React.cloneElement(row, { setTodos, todo, key: todo.id })
+        )}
+      </AnimatePresence>
+    </SList>
+  </>
 )
 
 //x//////////////////////////////////////////////////

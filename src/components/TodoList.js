@@ -7,16 +7,13 @@ import { AnimatePresence } from 'framer-motion'
 //x//////////////////////////////////////////////////
 
 export const TodoList = ({ todos, setTodos, row }) => (
-  <>
-    <SList>
-      <AnimatePresence initial={false}>
-        {todos.map(todo =>
-          React.cloneElement(row, { setTodos, todo, key: todo.id })
-        )}
-      </AnimatePresence>
-    </SList>
-    {/* {!todos.length && <p>No todos</p>} */}
-  </>
+  <SList>
+    <AnimatePresence initial={false}>
+      {todos.map(todo =>
+        React.cloneElement(row, { setTodos, todo, key: todo.id })
+      )}
+    </AnimatePresence>
+  </SList>
 )
 
 //x//////////////////////////////////////////////////

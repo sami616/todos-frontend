@@ -12,6 +12,7 @@ const uses = [
   'Hooks',
   'Code splitting (Suspense)',
   'Routing (React Router)',
+  'Cloning elements',
   'CSSinJS (Styled Components)',
   'Themes (Styled Components)',
   'Formatting (Prettier)',
@@ -28,8 +29,6 @@ const uses = [
   'Animation (Framer Motion)',
   'Refs',
 ]
-
-const doesnt = ['Custom hooks', 'Context', 'Auth', 'GraphQL', 'useReducer']
 
 export const Home = () => (
   <Transform>
@@ -57,12 +56,6 @@ const List = styled.ul(
 )
 
 const SChecked = styled(Checked)(
-  ({ theme }) => css`
-    fill: ${theme.colors.secondary};
-  `
-)
-
-const SCross = styled(Cross)(
   ({ theme }) => css`
     fill: ${theme.colors.secondary};
   `

@@ -1,6 +1,5 @@
 import React from 'react'
 import { TodoMoveButton, ToggleButton, TodoRow } from '../../../components'
-
 import { TodoEditModal } from './'
 
 //x//////////////////////////////////////////////////

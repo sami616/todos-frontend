@@ -17,6 +17,7 @@ export const Button = ({
   <SButton
     {...props}
     loading={loading ? 'true' : 'false'}
+    disabled={loading}
     margin={margin}
     small={small}
     secondary={secondary}>
@@ -36,7 +37,7 @@ export const Button = ({
 //x//////////////////////////////////////////////////
 
 const SButton = styled.button(
-  ({ theme, small, secondary, margin, loading }) => css`
+  ({ theme, small, secondary, margin }) => css`
     padding: 0.5rem 1rem;
     padding: ${small && '0.3rem 0.5rem'};
     font-size: ${small && '0.8rem'};
@@ -51,6 +52,12 @@ const SButton = styled.button(
     background: ${secondary && '#fff'};
     border: 1px solid ${theme.colors.primary};
     border-radius: ${theme.radius.large};
+
+    &:hover {
+      background: ${!secondary && theme.colors.primaryDark};
+      border: ${secondary && `1px solid ${theme.colors.primaryDark}`};
+      color: ${secondary && theme.colors.primaryDark};
+    }
 
     &:disabled {
       opacity: 0.6;

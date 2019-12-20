@@ -29,11 +29,16 @@ const SNav = styled.nav(
 const SNavLink = styled(NavLink)(
   ({ theme }) => css`
     padding: 0.5rem 1rem;
-    color: ${theme.colors.secondary};
+    color: inherit;
     border-radius: ${theme.radius.medium};
     &.active {
       background: ${theme.colors.secondary};
       color: #fff;
+    }
+    &:hover {
+      &:not(.active) {
+        color: ${theme.colors.secondary};
+      }
     }
   `
 )

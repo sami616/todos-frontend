@@ -9,9 +9,13 @@ export const Theme = ({ children }) => (
   <ThemeProvider
     theme={{
       colors: {
-        primary: '#691992',
-        secondary: '#BC0D80',
-        tertiary: '#EF4367',
+        primary: 'hsla(280, 71%, 34%, 1)',
+        primaryDark: 'hsla(280, 71%, 24%, 1)',
+        primaryLight: 'hsla(280, 71%, 44%, 1)',
+        secondary: 'hsla(321, 87%, 39%, 1)',
+        secondaryDark: 'hsla(321, 87%, 29%, 1)',
+        secondaryLight: 'hsla(321, 87%, 49%, 1)',
+        tertiary: 'hsla(347, 84%, 60%, 1)',
       },
       radius: {
         large: '10rem',

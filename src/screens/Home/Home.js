@@ -35,7 +35,7 @@ export const Home = () => (
     <h4>USES:</h4>
     <List>
       {uses.map(item => (
-        <Item>
+        <Item key={item}>
           <SChecked /> {item}
         </Item>
       ))}

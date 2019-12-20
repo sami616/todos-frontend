@@ -30,12 +30,7 @@ export const TodoMoveButton = ({ todo, setTodos }) => {
   }
 
   return (
-    <Button
-      loading={loading}
-      secondary
-      small
-      disabled={loading}
-      onClick={moveRow}>
+    <Button loading={loading} secondary small onClick={moveRow}>
       {loading ? 'Moving' : 'Move'}
     </Button>
   )

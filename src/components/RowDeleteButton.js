@@ -37,7 +37,6 @@ export const RowDeleteButton = ({
       secondary={secondary}
       small={small}
       loading={loading}
-      disabled={loading}
       onClick={deleteRow}>
       {loading ? 'Deleting' : 'Delete'}
     </Button>

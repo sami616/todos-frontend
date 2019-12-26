@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { ReactComponent as Cross } from '../media/cross.svg'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Portal } from './'
 
 //x//////////////////////////////////////////////////
 // Modal
@@ -15,27 +16,29 @@ export const Modal = ({ isOpen, setClose, children }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <SOverlay
-          key='overlay'
-          initial='closed'
-          animate='open'
-          exit='closed'
-          variants={{
-            open: { opacity: 1 },
-            closed: { opacity: 0 },
-          }}
-          data-close
-          onClick={onClose}>
-          <SContent
-            key='content'
+        <Portal>
+          <SOverlay
+            key='overlay'
+            initial='closed'
+            animate='open'
+            exit='closed'
             variants={{
-              open: { scale: 1 },
-              closed: { scale: 0.8 },
-            }}>
-            {children}
-            <SClose data-close>×</SClose>
-          </SContent>
-        </SOverlay>
+              open: { opacity: 1 },
+              closed: { opacity: 0, afterChildren: true },
+            }}
+            data-close
+            onClick={onClose}>
+            <SContent
+              key='content'
+              variants={{
+                open: { scale: 1, opacity: 1 },
+                closed: { scale: 0.8, opacity: 0 },
+              }}>
+              {children}
+              <SClose data-close>×</SClose>
+            </SContent>
+          </SOverlay>
+        </Portal>
       )}
     </AnimatePresence>
   )
